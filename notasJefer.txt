@@ -1,0 +1,218 @@
+Para arrancar un proyecto que se baja de git 
+se instala nmp install
+y npm run dev
+
+
+VITE una herramienta de compilación que tiene como 
+objetivo proporcionar una experiencia de desarrollo más rápida y ágil para
+proyectos de desarrollo web
+
+Ahora existen unas herramientas que son mejores para el desarrollo con react
+next.js
+remix.
+
+
+--------------------------------
+
+CREAR PROYECTO CON VITE PARA react
+npm init vite@latest , ESTE CREA LA CARPETA CON LOS MODULOS PARA react
+
+luego se ingresa a la carpeta, y se instalan dependencias necesarias
+npm install
+
+luego se arranca el servidor
+npm run dev
+
+--------------------------------
+
+el logo que aparece de react se encuentra en 
+/home/cristal/REACT/6-admin-veterianaria-react/citas-react/src/App.jsx
+si se decea modificar aqui se debe hacer
+
+
+
+------------------------------------
+
+en app.jsx es donde se trabaja la mayor parte 
+
+
+
+
+---------------------------------
+jsx: 
+javascripr sytax extension
+
+
+en los archivos jsx se puede utilizar html y js
+
+
+antes del return se puede utilizar codigo javascript
+
+Es de sintaxis estricto
+
+las etiquetas de que no tienen cierre por ejemplo las de imagenes o inputs
+se les debe colocar al final / 
+
+<input type='text' />
+
+
+PARA RETORNAT UN ELMENTO SOLO DEBE SER UNO
+ESTA SINTAXIS SE LA RECONOCE COMO FRAMET
+<>
+    
+
+</>
+
+----------------------------------
+para imprimir codigo JS en el html se utilizan estas llaves {}
+
+Igual se puede utilizar los ternarios en el html
+
+{ edad >= 19 ? 'eres mayor' : 'Eres Menor'}
+
+
+para imprimir texto y JS se utilizan comillas sencillas 
+{'Hola'.toUpperCase()}
+
+
+-------------------------------------
+
+Los archivos de JSX deben ir la primera en mayuscula
+
+----------------------------------------
+
+LOS COMPONENTES SE PUEDE CREAR UNA CARPETA QUE SE LLAME ASI 
+Y CADA COMPONENTE DEBE TENER SU FUNCION QUE SE LLAME IGUAL AL archivos
+
+
+
+function Header() {
+  
+    return (
+      <>
+        <h1>Desde Header</h1>
+      </>
+    )
+  }
+  
+  export default Header;
+
+
+--------------------------------------
+
+pARA UTILIZAR UN COMPONENTE DESDE APP.JSX PRIMERO SE DEBE IMPORTAR
+
+y luego dento del return se llama al COMPONENTE con el / se cierra la etiquetas
+return (
+    <>
+      <Header/>
+    </>
+  )
+
+
+
+Para crear la estructura de un archivo jsv se debe escribir 
+
+rafc 
+rafce
+
+
+-------------------------------
+sE DEBE INSTALAR UNA HERRAMIENTA PARA LOS NAVEGADORES 
+
+React Developer Tools
+esta herramienta 
+
+
+
+
+
+---------------------------------------
+
+CSS CON REACT
+instalar tailwindcss
+
+npm install -D tailwindcss postcss autoprefixer
+
+
+archivos de configuracion de tailwindcss
+npx tailwindcss init -p 
+
+
+se debe agregar los paquetes en el archivo principal de css, este en react es el index.css, se deben agregar estos componentes 
+para hacer uso de tailwind
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+luego agregar todos las paginas que se quieren que haga efecto las clases de tailwind, esto se coloca en el archivo 
+/home/cristal/REACT/6-admin-veterianaria-react/citas-react/tailwind.config.js
+content: ["./index.html", "./src/**/*.jsx"],
+
+
+--------------------------------------------------------
+
+Para agregar una clase en react es con la palabra
+className
+
+
+
+
+
+------------------------------------------------------
+
+QUE ES HOOK 
+
+
+useState: es la variable del estado de algo de una variable u objetivo
+useEfect: 
+
+
+para hacer uso de estas propiedades se las debe importar en el jsx
+import {useState, useEffect} from 'react'
+
+se debe declarar una variable y el modificador de esa variable
+const [cliente, setCliente] = useState({}); las llaves señaliza que es un objeto vacio
+
+Para guardar valares se hace esto en el input
+value={nombre}
+onChange= {(e)=> setNombre(e.target.value)}
+
+
+
+
+----------------------------------------------------
+
+los style components
+
+los estilos se fusionan con el js, la ventaja es que el css no va quedar en un archivo
+
+
+se deben instalar unas dependencias
+npm install @emotion/react
+npm install @emotion/styled
+
+
+para declarar un estilo se hace asi 
+
+const Heading = styled.h1`
+  font-size: 2rem;
+`;
+
+<Heading>Jefersondelgado</Heading>
+
+
+
+-------------------------------------------------------
+Crear propios hooks
+
+poder reutilizar una funcion, esto se reutiliza y el performace mejora
+
+Se crea un hook dento de la carpeta hooks
+la estrucutrua es la misma queda rafce y para que todos los componentes pueden hacer el uso de este hook
+se le debe hacer un return 
+
+y en el componente que se lo necesite se debe hacer el import 
+
